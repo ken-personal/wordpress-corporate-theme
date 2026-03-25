@@ -1,0 +1,395 @@
+/*
+Theme Name: Lightning Child
+Template: lightning
+Version: 1.0.0
+Description: Lightning子テーマ - プロ仕様コーポレートサイト
+*/
+@import url("../lightning/style.css");
+
+/* ============================================
+   CSS変数（デザイントークン）
+   ============================================ */
+:root {
+  --color-primary:    #1a3a5c;
+  --color-accent:     #e8602c;
+  --color-text:       #333333;
+  --color-light:      #f5f7fa;
+  --color-white:      #ffffff;
+  --font-base:        'Noto Sans JP', sans-serif;
+  --font-heading:     'Noto Serif JP', serif;
+  --radius:           6px;
+  --shadow:           0 4px 20px rgba(0,0,0,0.08);
+  --transition:       all 0.3s ease;
+}
+
+/* ============================================
+   ベーススタイル
+   ============================================ */
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+a {
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* ============================================
+   ヘッダー
+   ============================================ */
+#site-header {
+  background: var(--color-white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-branding .site-title a {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ============================================
+   ナビゲーション
+   ============================================ */
+.global-nav .menu > li > a {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.global-nav .menu > li > a:hover,
+.global-nav .menu > li.current-menu-item > a {
+  color: var(--color-primary);
+  background: var(--color-light);
+}
+
+/* ============================================
+   ヒーローセクション
+   ============================================ */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2d5f8a 100%);
+  color: var(--color-white);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 50%;
+}
+
+.hero-section h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--color-white);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-white) !important;
+  padding: 16px 48px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(232,96,44,0.4);
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(232,96,44,0.5);
+  background: #d4521f;
+  color: var(--color-white) !important;
+}
+
+/* ============================================
+   セクション共通
+   ============================================ */
+.section {
+  padding: 80px 0;
+}
+
+.section-alt {
+  background: var(--color-light);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--color-primary);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+.section-title p {
+  color: #666;
+  margin-top: 16px;
+  font-size: 1rem;
+}
+
+/* ============================================
+   サービスカード
+   ============================================ */
+.service-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.service-card .icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ============================================
+   実績カード
+   ============================================ */
+.works-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.works-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.works-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.works-card-body {
+  padding: 24px;
+}
+
+.works-card-body h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.works-card-body p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   CTAセクション
+   ============================================ */
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary), #1e4d7a);
+  color: var(--color-white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  color: var(--color-white);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  opacity: 0.9;
+  margin-bottom: 32px;
+  font-size: 1.1rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-white) !important;
+  padding: 16px 48px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  background: #d4521f;
+  color: var(--color-white) !important;
+}
+
+/* ============================================
+   フッター
+   ============================================ */
+#site-footer {
+  background: #1a1a2e;
+  color: rgba(255,255,255,0.7);
+  padding: 60px 0 30px;
+}
+
+#site-footer a {
+  color: rgba(255,255,255,0.7);
+}
+
+#site-footer a:hover {
+  color: var(--color-white);
+}
+
+.footer-copy {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============================================
+   ScrollReveal用（初期非表示）
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   レスポンシブ
+   ============================================ */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 20px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .service-card {
+    margin-bottom: 24px;
+  }
+}
+
+/* コンテンツ幅を広げる */
+.l-contentsArea,
+.l-contents {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-md-4 {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.mb-5 { margin-bottom: 3rem; }
+
+@media (max-width: 768px) {
+  .col-md-6, .col-md-4, .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
