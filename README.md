@@ -35,6 +35,24 @@ Username: `furniture` / Password: `watery`
 
 ---
 
+
+---
+
+## 📸 スクリーンショット
+
+### トップページ
+![トップページ](screenshots/screenshot-home.png)
+
+### サービスページ
+![サービスページ](screenshots/screenshot-service.png)
+
+### 会社概要ページ
+![会社概要](screenshots/screenshot-about.png)
+
+### お問い合わせページ
+![お問い合わせ](screenshots/screenshot-contact.png)
+
+---
 ## 🛠 技術スタック
 
 - **CMS:** WordPress 6.9.4
