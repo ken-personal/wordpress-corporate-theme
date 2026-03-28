@@ -151,3 +151,29 @@ git clone https://github.com/ken-personal/wordpress-corporate-theme.git lightnin
 ## 📝 License
 
 MIT License
+
+
+## 🆕 最新アップデート（2026年3月）
+
+### Tailwind CSS導入
+- Tailwind CSS v3をWordPressテーマに統合
+- `src/input.css` → `tailwind.css` のビルドパイプライン構築
+
+### カスタムGutenbergブロック
+- `register_block_type` + `block.json` によるブロック登録
+- PHPテンプレート（`block.php`）でのサーバーサイドレンダリング
+- JavaScript（`block.js`）でのエディタUI実装
+
+#### 実装済みブロック
+| ブロック名 | 説明 |
+|-----------|------|
+| ヒーローブロック | グラデーション背景・タイトル・CTA |
+
+#### ブロックファイル構成
+```
+blocks/
+└── hero/
+    ├── block.json  # ブロック定義
+    ├── block.php   # フロントエンド表示
+    └── block.js    # エディタUI
+```

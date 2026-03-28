@@ -84,3 +84,13 @@ add_action('acf/init', function() {
         'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'staff']]],
     ]);
 });
+
+// Tailwind CSS
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_style('tailwind', get_stylesheet_directory_uri() . '/tailwind.css', [], '1.0.0');
+});
+
+// カスタムブロック登録
+add_action('init', function() {
+    register_block_type(get_stylesheet_directory() . '/blocks/hero');
+});

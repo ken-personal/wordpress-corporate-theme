@@ -1,0 +1,32 @@
+{
+  "apiVersion": 2,
+  "name": "lightning-child/hero",
+  "title": "ヒーローブロック",
+  "category": "layout",
+  "icon": "cover-image",
+  "description": "ヒーローセクション",
+  "keywords": [
+    "hero",
+    "ヒーロー"
+  ],
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "subtitle": {
+      "type": "string",
+      "default": ""
+    },
+    "btnText": {
+      "type": "string",
+      "default": ""
+    },
+    "btnUrl": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./block.js",
+  "render": "file:./block.php"
+}
